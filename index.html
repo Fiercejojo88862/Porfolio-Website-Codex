@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body id="top">
+  <div class="ambient-scene" aria-hidden="true"><div class="ambient-orb orb-a"></div><div class="ambient-orb orb-b"></div><div class="ambient-grid"></div></div>
   <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -25,6 +26,7 @@
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
+      <button class="quick-nav-button" type="button" data-open-command aria-label="Open quick navigation">Explore <kbd>⌘ / Ctrl K</kbd></button>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
       </button>
@@ -37,7 +39,7 @@
       <div class="container hero-grid">
         <div class="hero-text">
           <p class="eyebrow"><span class="status-dot"></span> STUDENT. BUILDER. ALWAYS CURIOUS.</p>
-          <h1 id="hero-heading">Joseph<br><span>Michael Shaker.</span></h1>
+          <h1 id="hero-heading">Ideas into code.<br><span>Systems into life.</span></h1><p class="hero-signature">JOSEPH MICHAEL SHAKER <span>↗</span></p>
           <p class="subtitle"><span class="sr-only">Software and Data Engineering student, Linux and homelab builder, responsive web developer.</span><span id="typed" aria-hidden="true">Software + Data Engineering Student</span><span class="caret" aria-hidden="true">|</span></p>
           <p class="lede">Software and Data Engineering Technology undergrad based in Aberdeen, NJ, studying in Newark. I build Linux tools, web apps, and homelab systems: C++, Node.js, Docker, and modern HTML/CSS/JS.</p>
           <div class="hero-actions">
@@ -50,13 +52,15 @@
             <li>🐧 Omarchy / Hyprland on Arch</li>
           </ul>
         </div>
-        <div class="hero-card" data-parallax="-0.05">
+        <div class="hero-visual"><div class="hero-orbit orbit-outer" aria-hidden="true"></div><div class="hero-orbit orbit-inner" aria-hidden="true"></div><span class="floating-label label-top">● BUILT WITH CURIOSITY</span><div class="hero-card" data-parallax="-0.05">
           <div class="portrait-frame"><img class="headshot" data-scrub-scale src="assets/headshot.jpg" alt="Headshot photo of Joseph Michael Shaker" width="422" height="467" loading="eager" fetchpriority="high" /></div>
           <span class="portrait-label">THE HUMAN BEHIND THE CODE ↗</span><p class="hero-card-name">Joseph M. Shaker</p>
           <p class="hero-card-role">Software + Data Engineering</p>
           <div class="hero-card-tags">
             <span>C++</span><span>Node.js</span><span>Docker</span><span>Linux</span>
           </div>
+        </div>
+        <div class="terminal-badge"><span class="terminal-dot"></span><code>joseph@homelab:~$ build something</code></div>
         </div>
       </div>
     </section>
@@ -82,7 +86,7 @@
 
     <section class="section" aria-labelledby="featured-heading">
       <div class="container">
-        <h2 id="featured-heading">Featured work</h2>
+        <div class="section-kicker">SELECTED WORK / 01</div><h2 id="featured-heading">Built to solve.<br><span class="gradient-text">Made to explore.</span></h2>
         <p class="section-sub">A snapshot of what I've built. Full details live on the Projects page.</p>
         <div class="feature-grid">
           <article class="feature-card">
@@ -115,7 +119,7 @@
 
     <section class="section section-alt" aria-labelledby="ido-heading">
       <div class="container">
-        <h2 id="ido-heading">What I do</h2>
+        <div class="section-kicker">THE TOOLBOX / 02</div><h2 id="ido-heading">Different tools.<br>Same curiosity.</h2>
         <div class="card-grid">
           <div class="mini-card">
             <h3>🖥️ Responsive web front-ends</h3>
@@ -171,6 +175,13 @@
     </div>
   </footer>
 
+  <dialog class="command-dialog" id="command-dialog" aria-labelledby="command-title">
+    <div class="command-head"><h2 id="command-title">Where to next?</h2><button type="button" data-close-command aria-label="Close quick navigation">×</button></div>
+    <label for="command-search" class="sr-only">Search pages</label><input id="command-search" type="search" placeholder="Find a page or project…" autocomplete="off" />
+    <nav aria-label="Quick navigation" class="command-links">
+      <a href="index.html">01 <span>Home</span> ↗</a><a href="about.html">02 <span>About Joseph</span> ↗</a><a href="projects.html">03 <span>Projects</span> ↗</a><a href="skills.html">04 <span>Skills &amp; tools</span> ↗</a><a href="contact.html">05 <span>Get in touch</span> ↗</a><a href="projects.html#project-1">↳ <span>Lock studio</span> ↗</a><a href="projects.html#project-2">↳ <span>Docker homelab</span> ↗</a><a href="projects.html#project-3">↳ <span>LubeLogger</span> ↗</a>
+    </nav><p class="command-empty" hidden>No matches. Try “contact” or “projects”.</p><p class="small-note">Escape to close · Tab to explore · Enter to open</p>
+  </dialog>
   <script src="script.js" defer></script>
 </body>
 </html>

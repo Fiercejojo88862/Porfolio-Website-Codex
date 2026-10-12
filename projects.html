@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body id="top">
+  <div class="ambient-scene" aria-hidden="true"><div class="ambient-orb orb-a"></div><div class="ambient-orb orb-b"></div><div class="ambient-grid"></div></div>
   <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -25,6 +26,7 @@
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
+      <button class="quick-nav-button" type="button" data-open-command aria-label="Open quick navigation">Explore <kbd>⌘ / Ctrl K</kbd></button>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
       </button>
@@ -35,9 +37,10 @@
     <div class="page-label container">03 / SELECTED BUILDS</div>
     <section id="projects" class="section section-alt" aria-labelledby="projects-heading">
       <div class="container">
-        <h2 id="projects-heading">Projects</h2>
+        <div class="section-kicker">EXPERIMENTS WITH A PURPOSE</div><h1 id="projects-heading" class="page-title">Not just ideas.<br><span class="gradient-text">Working systems.</span></h1>
         <p class="section-sub">Three featured builds. Three real projects, from desktop tools to self-hosted systems. Use the controls or focus the carousel and press the arrow keys.</p>
 
+        <nav class="project-picker" aria-label="Select a featured project"><a href="#project-1"><span>01 / PYTHON + QML</span>Lock studio ↗</a><a href="#project-2"><span>02 / DOCKER + LINUX</span>Media homelab ↗</a><a href="#project-3"><span>03 / SELF-HOSTED</span>LubeLogger ↗</a></nav>
         <div class="carousel" id="carousel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Project showcase">
           <div class="carousel-track" id="carousel-track">
             <article class="project-card carousel-slide" id="project-1" aria-roledescription="slide" aria-label="1 of 3">
@@ -153,6 +156,13 @@
     </div>
   </footer>
 
+  <dialog class="command-dialog" id="command-dialog" aria-labelledby="command-title">
+    <div class="command-head"><h2 id="command-title">Where to next?</h2><button type="button" data-close-command aria-label="Close quick navigation">×</button></div>
+    <label for="command-search" class="sr-only">Search pages</label><input id="command-search" type="search" placeholder="Find a page or project…" autocomplete="off" />
+    <nav aria-label="Quick navigation" class="command-links">
+      <a href="index.html">01 <span>Home</span> ↗</a><a href="about.html">02 <span>About Joseph</span> ↗</a><a href="projects.html">03 <span>Projects</span> ↗</a><a href="skills.html">04 <span>Skills &amp; tools</span> ↗</a><a href="contact.html">05 <span>Get in touch</span> ↗</a><a href="projects.html#project-1">↳ <span>Lock studio</span> ↗</a><a href="projects.html#project-2">↳ <span>Docker homelab</span> ↗</a><a href="projects.html#project-3">↳ <span>LubeLogger</span> ↗</a>
+    </nav><p class="command-empty" hidden>No matches. Try “contact” or “projects”.</p><p class="small-note">Escape to close · Tab to explore · Enter to open</p>
+  </dialog>
   <script src="script.js" defer></script>
 </body>
 </html>

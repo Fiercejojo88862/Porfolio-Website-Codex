@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body id="top">
+  <div class="ambient-scene" aria-hidden="true"><div class="ambient-orb orb-a"></div><div class="ambient-orb orb-b"></div><div class="ambient-grid"></div></div>
   <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -25,6 +26,7 @@
           <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
         </ul>
       </nav>
+      <button class="quick-nav-button" type="button" data-open-command aria-label="Open quick navigation">Explore <kbd>⌘ / Ctrl K</kbd></button>
       <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
       </button>
@@ -37,7 +39,7 @@
       <div class="container two-col">
         <div>
           <div class="heading-row">
-            <h2 id="contact-heading">Contact</h2>
+            <h1 id="contact-heading" class="page-title">Let’s build<br><span class="gradient-text">something good.</span></h1>
             <img class="heading-logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" />
           </div>
           <p><span class="badge">● Open to internships &amp; collaboration</span></p>
@@ -69,6 +71,10 @@
           <button class="btn btn-primary" type="submit">Open email draft</button>
           <p id="form-status" role="status" aria-live="polite"></p>
         </form>
+      </div>
+      <div class="container connection-panel">
+        <div class="connection-copy"><span class="section-kicker">TAKE THE CONVERSATION WITH YOU</span><h2>One scan.<br><span class="gradient-text">All the details.</span></h2><p>Scan with your phone’s camera, then tap the link to open my digital contact card in your phone’s browser. Email, social links, and a save-to-contacts download are all there.</p><div class="connection-actions"><a class="btn btn-primary" href="contact-card.html" target="_blank" rel="noopener">Open contact card ↗</a><a class="btn btn-ghost" href="assets/joseph-shaker.vcf" download>Save contact ↓</a><button type="button" class="btn btn-ghost" data-copy="email">Copy email</button></div><p class="utility-status" role="status" aria-live="polite"></p></div>
+        <div class="qr-card"><span class="qr-corner" aria-hidden="true"></span><img src="assets/contact-qr.png" alt="QR code linking to Joseph Shaker’s digital contact card" width="456" height="456" loading="lazy"/><p>JOSEPH S. / DIGITAL CONTACT CARD</p><a href="assets/contact-qr.png" download="Joseph-Shaker-QR.png">Download QR code ↓</a></div>
       </div>
       <div class="container faq" aria-label="Frequently asked questions">
         <h2>Quick answers</h2>
@@ -116,6 +122,13 @@
     </div>
   </footer>
 
+  <dialog class="command-dialog" id="command-dialog" aria-labelledby="command-title">
+    <div class="command-head"><h2 id="command-title">Where to next?</h2><button type="button" data-close-command aria-label="Close quick navigation">×</button></div>
+    <label for="command-search" class="sr-only">Search pages</label><input id="command-search" type="search" placeholder="Find a page or project…" autocomplete="off" />
+    <nav aria-label="Quick navigation" class="command-links">
+      <a href="index.html">01 <span>Home</span> ↗</a><a href="about.html">02 <span>About Joseph</span> ↗</a><a href="projects.html">03 <span>Projects</span> ↗</a><a href="skills.html">04 <span>Skills &amp; tools</span> ↗</a><a href="contact.html">05 <span>Get in touch</span> ↗</a><a href="projects.html#project-1">↳ <span>Lock studio</span> ↗</a><a href="projects.html#project-2">↳ <span>Docker homelab</span> ↗</a><a href="projects.html#project-3">↳ <span>LubeLogger</span> ↗</a>
+    </nav><p class="command-empty" hidden>No matches. Try “contact” or “projects”.</p><p class="small-note">Escape to close · Tab to explore · Enter to open</p>
+  </dialog>
   <script src="script.js" defer></script>
 </body>
 </html>

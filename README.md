@@ -29,3 +29,17 @@ Push main to GitHub. In Settings → Pages, use Deploy from a branch, main, / (r
 ## Edit
 
 Content is in the five HTML files, styling in styles.css, shared interactions in script.js, and supplied images in assets/. Language bars are self-assessed confidence levels. This portfolio describes LubeLogger as a self-hosted deployment of an existing app, not an app Joseph authored.
+
+## Digital contact card and QR
+
+The separate contact page includes a downloadable QR code generated locally with `qrencode` and decoded with `zbarimg` during validation. It encodes the canonical GitHub Pages URL for `contact-card.html`. Scanning opens that page in the phone browser after the visitor taps the camera link. The website cannot control whether a scanner uses a new tab or an in-app browser.
+
+The mobile card includes email, GitHub, LinkedIn, Aberdeen NJ, a share action with copy fallback, and a vCard download. No phone number was supplied, so none is invented. Contact details are public by design. Publish these files before distributing the QR code.
+
+To regenerate if the deployed URL changes:
+
+```sh
+qrencode -o assets/contact-qr.png -s 8 -m 4 -l H 'https://Fiercejojo88862.github.io/Porfolio-Website-Codex/contact-card.html'
+```
+
+The visual upgrade adds locally rendered aurora lighting, an orbital portrait, pointer lighting, subtle card tilt, a searchable Ctrl/Cmd+K navigation dialog, project selectors, and a skill focus explorer. Reduced-motion preferences remain supported. QR rendering requires no third-party service.

@@ -116,6 +116,7 @@ if (carousel) {
     if (focusWillHide) carousel.focus({preventScroll: true});
     slides.forEach((slide, i) => { slide.hidden = i !== active; });
     buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === active)));
+    document.querySelectorAll('.project-picker a').forEach(link => link.setAttribute('aria-current', String(link.getAttribute('href') === '#' + slides[active].id)));
     if (status) status.textContent = `Project ${active + 1} of ${slides.length}: ${slides[active].querySelector('h3').textContent}`;
     if (updateHash) history.replaceState(null, '', '#' + slides[active].id);
     requestScrollUpdate();
@@ -218,3 +219,101 @@ if (form) {
     window.location.href = `mailto:Josephshaker2020@aol.com?subject=${subject}&body=${body}`;
   });
 }
+
+// Quick navigation is a native dialog, including focus trapping and Escape support.
+const commandDialog = document.querySelector('#command-dialog');
+if (commandDialog && typeof commandDialog.showModal === 'function') {
+  const search = commandDialog.querySelector('#command-search');
+  const quickLinks = [...commandDialog.querySelectorAll('.command-links a')];
+  const empty = commandDialog.querySelector('.command-empty');
+  function openCommands() {
+    if (commandDialog.open) return;
+    search.value = '';
+    quickLinks.forEach(link => { link.hidden = false; });
+    empty.hidden = true;
+    commandDialog.showModal();
+    search.focus();
+  }
+  document.querySelectorAll('[data-open-command]').forEach(button => button.addEventListener('click', openCommands));
+  commandDialog.querySelector('[data-close-command]').addEventListener('click', () => commandDialog.close());
+  commandDialog.addEventListener('click', event => {
+    const bounds = commandDialog.getBoundingClientRect();
+    if (event.target === commandDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) commandDialog.close();
+  });
+  document.addEventListener('keydown', event => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); openCommands(); }
+  });
+  search.addEventListener('input', () => {
+    const query = search.value.trim().toLowerCase();
+    quickLinks.forEach(link => { link.hidden = !link.textContent.toLowerCase().includes(query); });
+    empty.hidden = quickLinks.some(link => !link.hidden);
+  });
+  search.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      const first = quickLinks.find(link => !link.hidden);
+      if (first) { event.preventDefault(); first.click(); }
+    }
+  });
+  quickLinks.forEach(link => link.addEventListener('click', () => commandDialog.close()));
+} else {
+  document.querySelectorAll('[data-open-command]').forEach(button => { button.hidden = true; });
+}
+
+const skillDescriptions = {
+  web: 'Web: semantic HTML, responsive CSS, and JavaScript interactions that work with a keyboard as well as a mouse.',
+  systems: 'Systems: Linux, Docker Compose, container networking, volume permissions, and the troubleshooting behind a five-service homelab.',
+  data: 'Data: Software and Data Engineering coursework, Python tooling, and a learning roadmap toward databases and data pipelines.'
+};
+document.querySelectorAll('[data-skill-focus]').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('[data-skill-focus]').forEach(option => option.setAttribute('aria-pressed', String(option === button)));
+  document.querySelector('#focus-description').textContent = skillDescriptions[button.dataset.skillFocus];
+}));
+
+// Local pointer lighting adds depth without tracking or changing the cursor.
+const litCards = document.querySelectorAll('.mini-card,.step,.skill-group,.feature-card,.info-card,.contact-form,.hero-card');
+litCards.forEach(card => {
+  card.addEventListener('pointermove', event => {
+    if (reducedMotion || event.pointerType !== 'mouse') return;
+    const bounds = card.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width;
+    const y = (event.clientY - bounds.top) / bounds.height;
+    card.style.setProperty('--pointer-x', `${x * 100}%`);
+    card.style.setProperty('--pointer-y', `${y * 100}%`);
+    if (card.classList.contains('hero-card')) {
+      card.style.setProperty('--tilt-x', `${(0.5 - y) * 4}deg`);
+      card.style.setProperty('--tilt-y', `${(x - 0.5) * 3}deg`);
+    }
+  });
+  card.addEventListener('pointerleave', () => {
+    card.style.setProperty('--tilt-x', '0deg');
+    card.style.setProperty('--tilt-y', '0deg');
+  });
+});
+
+const contactCardURL = 'https://Fiercejojo88862.github.io/Porfolio-Website-Codex/contact-card.html';
+function utilityStatus(button, message) {
+  const section = button.closest('.connection-copy,.digital-card-body');
+  const status = section && section.querySelector('.utility-status');
+  if (status) status.textContent = message;
+}
+async function copyContact(button, value, success) {
+  try {
+    await navigator.clipboard.writeText(value);
+    utilityStatus(button, success);
+  } catch {
+    utilityStatus(button, `Copy this: ${value}`);
+  }
+}
+document.querySelectorAll('[data-copy]').forEach(button => button.addEventListener('click', () => {
+  copyContact(button, 'Josephshaker2020@aol.com', 'Email copied.');
+}));
+document.querySelectorAll('[data-share-card]').forEach(button => button.addEventListener('click', async () => {
+  if (typeof navigator.share === 'function') {
+    try {
+      await navigator.share({title: 'Joseph Shaker | Contact', text: 'Email, GitHub, LinkedIn, and contact details for Joseph Shaker.', url: contactCardURL});
+      utilityStatus(button, 'Contact card shared.');
+    } catch (error) {
+      if (error.name !== 'AbortError') await copyContact(button, contactCardURL, 'Contact card link copied.');
+    }
+  } else await copyContact(button, contactCardURL, 'Contact card link copied.');
+}));
