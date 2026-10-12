@@ -317,3 +317,19 @@ document.querySelectorAll('[data-share-card]').forEach(button => button.addEvent
     }
   } else await copyContact(button, contactCardURL, 'Contact card link copied.');
 }));
+
+const contactWidget = document.querySelector('#contact-widget');
+if (contactWidget) {
+  const launcher = contactWidget.querySelector('summary');
+  function closeContactWidget(restoreFocus = false) {
+    contactWidget.open = false;
+    if (restoreFocus) launcher.focus();
+  }
+  contactWidget.querySelector('.widget-close').addEventListener('click', () => closeContactWidget(true));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && contactWidget.open) closeContactWidget(contactWidget.contains(document.activeElement));
+  });
+  document.addEventListener('click', event => {
+    if (contactWidget.open && !contactWidget.contains(event.target)) closeContactWidget();
+  });
+}
