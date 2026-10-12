@@ -42,6 +42,8 @@ To regenerate if the deployed URL changes:
 qrencode -o assets/contact-qr.png -s 8 -m 4 -l H 'https://Fiercejojo88862.github.io/Porfolio-Website-Codex/contact-card.html'
 ```
 
-The visual upgrade adds locally rendered aurora lighting, an orbital portrait, pointer lighting, subtle card tilt, a searchable Ctrl/Cmd+K navigation dialog, project selectors, and a skill focus explorer. Reduced-motion preferences remain supported. QR rendering requires no third-party service.
+The visual upgrade adds locally rendered purple aurora lighting, an orbital portrait, pointer lighting, subtle card tilt, a searchable Ctrl/Cmd+K navigation dialog, project selectors, and a skill focus explorer. Reduced-motion preferences remain supported. QR rendering requires no third-party service.
 
 The five portfolio pages include a compact bottom-right contact popup. Its native details toggle works without JavaScript. Escape, outside click, and the close button dismiss it when JavaScript is available. The phone card remains the QR destination.
+
+Accent styling uses bright purple (#bf70ff), with coordinated purple gradients, glows, borders, controls, and keyboard focus rings. Supplied photos, logos, and screenshots retain their original colors.
