@@ -269,11 +269,12 @@ document.querySelectorAll('[data-skill-focus]').forEach(button => button.addEven
   document.querySelector('#focus-description').textContent = skillDescriptions[button.dataset.skillFocus];
 }));
 
-// Local pointer lighting adds depth without tracking or changing the cursor.
-const litCards = document.querySelectorAll('.mini-card,.step,.skill-group,.feature-card,.info-card,.contact-form,.hero-card');
+// Card spotlights use local coordinates so their glow follows the pointer.
+const litCards = document.querySelectorAll('.mini-card,.step,.skill-group,.feature-card,.info-card,.contact-form,.hero-card,.project-card,.stat,.cta-banner,.focus-console,.digital-card,.contact-popover');
 litCards.forEach(card => {
   card.addEventListener('pointermove', event => {
     if (reducedMotion || event.pointerType !== 'mouse') return;
+    card.classList.add('spotlight-active');
     const bounds = card.getBoundingClientRect();
     const x = (event.clientX - bounds.left) / bounds.width;
     const y = (event.clientY - bounds.top) / bounds.height;
@@ -285,6 +286,7 @@ litCards.forEach(card => {
     }
   });
   card.addEventListener('pointerleave', () => {
+    card.classList.remove('spotlight-active');
     card.style.setProperty('--tilt-x', '0deg');
     card.style.setProperty('--tilt-y', '0deg');
   });
@@ -332,4 +334,34 @@ if (contactWidget) {
   document.addEventListener('click', event => {
     if (contactWidget.open && !contactWidget.contains(event.target)) closeContactWidget();
   });
+}
+
+
+// One viewport spotlight follows the mouse, with updates capped at one per frame.
+const mouseSpotlight = document.querySelector('.mouse-spotlight');
+if (mouseSpotlight) {
+  let pointerFrame = null;
+  let pointerX = 0;
+  let pointerY = 0;
+  function hideSpotlight() {
+    root.classList.remove('pointer-active');
+    if (pointerFrame !== null) cancelAnimationFrame(pointerFrame);
+    pointerFrame = null;
+    litCards.forEach(card => card.classList.remove('spotlight-active'));
+  }
+  document.addEventListener('pointermove', event => {
+    if (reducedMotion || event.pointerType !== 'mouse') { hideSpotlight(); return; }
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    if (pointerFrame !== null) return;
+    pointerFrame = requestAnimationFrame(() => {
+      mouseSpotlight.style.transform = `translate3d(${pointerX}px, ${pointerY}px, 0)`;
+      root.classList.add('pointer-active');
+      pointerFrame = null;
+    });
+  }, {passive: true});
+  document.addEventListener('pointerleave', hideSpotlight);
+  window.addEventListener('blur', hideSpotlight);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) hideSpotlight(); });
+  motionPreference.addEventListener('change', hideSpotlight);
 }

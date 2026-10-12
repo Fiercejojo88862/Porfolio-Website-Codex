@@ -47,3 +47,5 @@ The visual upgrade adds locally rendered purple aurora lighting, an orbital port
 The five portfolio pages include a compact bottom-right contact popup. Its native details toggle works without JavaScript. Escape, outside click, and the close button dismiss it when JavaScript is available. The phone card remains the QR destination.
 
 Accent styling uses bright purple (#bf70ff), with coordinated purple gradients, glows, borders, controls, and keyboard focus rings. Supplied photos, logos, and screenshots retain their original colors.
+
+A visible purple mouse spotlight follows viewport pointer coordinates, with hover spotlights on cards and panels. Updates are capped at one animation frame. The effects are decorative, ignore clicks, retain the normal cursor, and switch off for touch and reduced-motion preferences.
