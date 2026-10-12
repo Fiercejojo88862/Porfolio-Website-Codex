@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Contact Joseph Michael Shaker, email, GitHub, LinkedIn, and contact form." />
+  <title>Porfolio Website Codex | Contact | Joseph Michael Shaker</title>
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Joseph Shaker home"><img class="logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" /><span>Joseph S.</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="skills.html" class="nav-link">Skills</a></li>
+          <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-label container">05 / START A CONVERSATION</div>
+    <section id="contact" class="section section-alt" aria-labelledby="contact-heading">
+      <div class="container two-col">
+        <div>
+          <div class="heading-row">
+            <h2 id="contact-heading">Contact</h2>
+            <img class="heading-logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" />
+          </div>
+          <p><span class="badge">● Open to internships &amp; collaboration</span></p>
+          <p>Based in Aberdeen, NJ. Open to internships, junior opportunities, and thoughtful collaborations. I usually reply within 1 to 2 days.</p>
+          <ul class="contact-list">
+            <li>📧 <a href="mailto:Josephshaker2020@aol.com">Josephshaker2020@aol.com</a></li>
+            <li>💻 <a href="https://github.com/Fiercejojo88862" rel="noopener">github.com/Fiercejojo88862</a></li>
+            <li>🔗 <a href="https://www.linkedin.com/in/joseph-shaker-548a49247" rel="noopener">LinkedIn: Joseph Shaker</a></li>
+            <li>📍 Aberdeen, NJ</li>
+          </ul>
+        </div>
+        <form action="mailto:Josephshaker2020@aol.com" method="post" enctype="text/plain" id="contact-form" class="contact-form" aria-describedby="form-status">
+          <p class="form-note">Write a note here, then send it in your email app. This form opens a draft and does not send messages automatically.</p>
+          <div class="field">
+            <label for="name">Name *</label>
+            <input id="name" aria-describedby="name-error" name="name" type="text" autocomplete="name" required minlength="2" />
+            <small class="error" id="name-error"></small>
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" aria-describedby="email-error" name="email" type="email" autocomplete="email" required />
+            <small class="error" id="email-error"></small>
+          </div>
+          <div class="field">
+            <label for="message">Message *</label>
+            <textarea id="message" aria-describedby="message-error" name="message" rows="5" required minlength="10"></textarea>
+            <small class="error" id="message-error"></small>
+          </div>
+          <button class="btn btn-primary" type="submit">Open email draft</button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="container faq" aria-label="Frequently asked questions">
+        <h2>Quick answers</h2>
+        <details>
+          <summary>How fast do you reply?</summary>
+          <p>Usually within 1 to 2 days. Email is fastest; the form above opens a draft addressed to my AOL inbox.</p>
+        </details>
+        <details>
+          <summary>What kind of work are you looking for?</summary>
+          <p>I'm a student primarily looking for internships and junior opportunities in software, data, or IT systems, plus small web or homelab projects.</p>
+        </details>
+        <details>
+          <summary>Where are you located?</summary>
+          <p>Aberdeen, NJ, commuting to university in Newark, NJ. Open to on-site roles nearby and remote work.</p>
+        </details>
+        <details>
+          <summary>Can I see your resume?</summary>
+          <p>It's not posted here. Email me at Josephshaker2020@aol.com and I'll send one over.</p>
+        </details>
+      </div>
+      <div class="container mt">
+        <h2>What happens next</h2>
+        <div class="steps steps-3">
+          <div class="step">
+            <h3>You write</h3>
+            <p>Send the draft from your email app, or email me directly: a few sentences about the role or project is plenty.</p>
+          </div>
+          <div class="step">
+            <h3>I reply</h3>
+            <p>Within 1 to 2 days, with honest answers and a resume if you need one.</p>
+          </div>
+          <div class="step">
+            <h3>We talk</h3>
+            <p>A call or campus meetup to work out scope, timeline, and next steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><img class="footer-logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" /><span>© <span id="year"></span> Joseph Michael Shaker. Porfolio Website Codex · Aberdeen, NJ</span></p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

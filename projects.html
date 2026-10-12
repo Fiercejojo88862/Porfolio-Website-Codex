@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Projects by Joseph Michael Shaker, lock screen customizer, Docker homelab, LubeLogger, and this portfolio." />
+  <title>Porfolio Website Codex | Projects | Joseph Michael Shaker</title>
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Joseph Shaker home"><img class="logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" /><span>Joseph S.</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link active" aria-current="page">Projects</a></li>
+          <li><a href="skills.html" class="nav-link">Skills</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-label container">03 / SELECTED BUILDS</div>
+    <section id="projects" class="section section-alt" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading">Projects</h2>
+        <p class="section-sub">Three featured builds. Three real projects, from desktop tools to self-hosted systems. Use the controls or focus the carousel and press the arrow keys.</p>
+
+        <div class="carousel" id="carousel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Project showcase">
+          <div class="carousel-track" id="carousel-track">
+            <article class="project-card carousel-slide" id="project-1" aria-roledescription="slide" aria-label="1 of 3">
+              <div class="project-image"><img data-scrub-scale src="assets/lock-studio.png" alt="Screenshot of the omarchy lock screen customizer app" width="1853" height="1135" loading="lazy" /></div>
+              <div class="project-body">
+                <h3>omarchy-lock-studio</h3>
+                <p>Python web app (127.0.0.1:8731) to customize the Omarchy lock screen: clock, profile + welcome line, dev quotes, MPRIS media, background picker with auto-upscale, theme text color, backup/restore. Generates <code>LockView.qml</code> preserving PAM auth.</p>
+                <p class="stack">Python · QML · HTML/CSS/JS · Linux</p>
+                <ul class="highlights">
+                  <li>Backup/restore so a bad theme never breaks your lock screen</li>
+                  <li>Preserves the password field and PAM authentication</li>
+                  <li>Background picker with automatic upscaling</li>
+                </ul>
+                <p><a href="https://github.com/Fiercejojo88862" rel="noopener" aria-label="omarchy-lock-studio on my GitHub profile">GitHub profile →</a></p>
+              </div>
+            </article>
+            <article class="project-card carousel-slide" id="project-2" aria-roledescription="slide" aria-label="2 of 3">
+              <div class="project-image"><img data-scrub-scale src="assets/homelab.png" alt="Screenshot of Docker homelab containers dashboard" width="941" height="566" loading="lazy" /></div>
+              <div class="project-body">
+                <h3>Docker Media Homelab</h3>
+                <p>Self-hosted media stack with Jellyfin, Radarr, qBittorrent, and Prowlarr. Solved volume permissions, indexer API integration, and container networking on Arch Linux.</p>
+                <p class="stack">Docker Compose · Linux · Networking</p>
+                <ul class="highlights">
+                  <li>Five services running on Arch Linux: Jellyfin, Radarr, qBittorrent, Prowlarr, LubeLogger</li>
+                  <li>Fixed volume-permission and indexer-API issues from scratch</li>
+                  <li>Private, self-hosted alternative to paid streaming</li>
+                </ul>
+                <p><a href="https://github.com/Fiercejojo88862" rel="noopener" aria-label="Homelab on my GitHub profile">GitHub profile →</a></p>
+              </div>
+            </article>
+            <article class="project-card carousel-slide" id="project-3" aria-roledescription="slide" aria-label="3 of 3">
+              <div class="project-image"><img data-scrub-scale src="assets/lubelogger.png" alt="Screenshot of LubeLogger garage showing my 2011 Mercedes GL450" width="1678" height="1013" loading="lazy" /></div>
+              <div class="project-body">
+                <h3>LubeLogger: Vehicle Maintenance</h3>
+                <p>LubeLogger is a self-hosted vehicle maintenance app: it logs fuel-ups, services, and repairs, tracks costs across every vehicle in the garage, and sends maintenance reminders. I run it on my own hardware, next to my Docker media stack.</p>
+                <p class="stack">Self-hosted · Docker · HTML/CSS</p>
+                <ul class="highlights">
+                  <li>Fuel, service, and cost tracking per vehicle</li>
+                  <li>Service history, oil changes, and reminders in one garage view</li>
+                  <li>Private by design, no subscriptions, no cloud account</li>
+                </ul>
+                <p><a href="https://github.com/Fiercejojo88862" rel="noopener" aria-label="LubeLogger setup on my GitHub profile">GitHub profile →</a></p>
+              </div>
+            </article>
+          </div>
+          <div class="carousel-controls" hidden>
+            <button id="prev-btn" aria-label="Previous project">‹ Prev</button>
+            <div class="dots" id="carousel-dots" role="group" aria-label="Choose slide"></div>
+            <button id="next-btn" aria-label="Next project">Next ›</button>
+          </div>
+          <p id="carousel-status" class="sr-only" role="status" aria-live="polite"></p>
+        </div>
+
+        <noscript><div class="project-grid-fallback">
+          <p class="small-note">Grid view (no JS needed):</p>
+          <ul>
+            <li><a href="#project-1">omarchy-lock-studio</a>: Python + QML lock customizer</li>
+            <li><a href="#project-2">Docker Media Homelab</a>: Jellyfin/Radarr stack</li>
+            <li><a href="#project-3">LubeLogger</a>: vehicle maintenance tracking</li>
+          </ul>
+        </div>
+        </noscript>
+        <div class="cta-banner">
+          <div>
+            <h3>Want the code or a tour?</h3>
+            <p>Everything lives on my GitHub profile: coursework, homelab notes, and more.</p>
+          </div>
+          <a class="btn btn-primary" href="https://github.com/Fiercejojo88862" rel="noopener">GitHub profile</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="notes-heading">
+      <div class="container">
+        <h2 id="notes-heading">Build notes &amp; gotchas</h2>
+        <p class="section-sub">The honest part: what broke, and what each project taught me.</p>
+        <div class="card-grid">
+          <div class="mini-card">
+            <h3>🔒 Lock studio: stale server danger</h3>
+            <p>A stale dev server once re-wrote a broken <code>LockView.qml</code> and killed my lock screen. Fix: relaunch the app (it takes over port 8731) before clicking Apply, plus backup/restore on every write.</p>
+          </div>
+          <div class="mini-card">
+            <h3>🐳 Homelab: permissions &amp; APIs</h3>
+            <p>Containers couldn't see each other's volumes until user/group IDs were mapped correctly, and the indexer needed its API key re-issued. Lesson: check identity and credentials before blaming the network.</p>
+          </div>
+          <div class="mini-card">
+            <h3>🚗 LubeLogger: honest records</h3>
+            <p>A maintenance tracker only works if the records are honest: every fuel-up and repair dated, so cost-per-mile stays accurate and nothing gets forgotten.</p>
+          </div>
+        </div>
+        <div class="card-grid">
+          <div class="mini-card">
+            <h3>📋 Booking widget: mobile first</h3>
+            <p>Designed phone-size first, then scaled up, date pickers and vehicle cards that stay usable on a 360px screen work everywhere.</p>
+          </div>
+          <div class="mini-card">
+            <h3>🌐 This portfolio: no frameworks</h3>
+            <p>Hand-written HTML/CSS/JS across five pages: shared stylesheet, guarded scripts per page, scroll-scrub motion, and deploys to both GitHub Pages and NJIT's server with zero build step.</p>
+          </div>
+          <div class="mini-card">
+            <h3>📚 What I'd do differently</h3>
+            <p>Start the README on day one, screenshot as I go, and pick image dimensions before writing layout code, retrofitting sizes cost the most time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><img class="footer-logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" /><span>© <span id="year"></span> Joseph Michael Shaker. Porfolio Website Codex · Aberdeen, NJ</span></p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

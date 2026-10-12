@@ -1,24 +1,31 @@
 # Porfolio Website Codex
 
-A new, independent portfolio for **Fiercejojo88862**. Dark editorial layout, lime accents, responsive project gallery, GitHub repository loading, project filters, and a copy-handle interaction.
+A five-page personal portfolio for Joseph Michael Shaker, based in Aberdeen, NJ. This repository is separate from Personal-Portfolio-Website and uses Joseph's supplied photos, screenshots, biography, and contact links.
 
-## Preview
+## Pages
 
-Open `index.html`, or run `python3 -m http.server 8000` in this directory and visit http://localhost:8000.
+- Home: typed roles, cropped portrait card, technology ticker, animated stats, featured project links, services, process, and contact CTA.
+- About: education, story, principles, everyday kit, interests, and 2026 / 2024 / 2023 timeline.
+- Projects: three manually controlled, keyboard-accessible slides with deep links, readable no-JavaScript articles, build notes, and GitHub CTA.
+- Skills: self-assessed language bars, tool chips, practices, roadmap, and current interests.
+- Contact: AOL email, GitHub, LinkedIn, validated email-draft form, native FAQ accordions, and next steps. Resume available by email on request.
 
-No installation or build step is required. Google Fonts is optional; system fonts are used if unavailable. The site displays clearly labeled design concepts and a GitHub profile link when the public GitHub API is unavailable.
+## Run
 
-## Customize
+Open index.html, or run `python3 -m http.server 8000` and visit http://localhost:8000. No dependencies or build step are required. Optional Google Fonts fall back to system fonts when offline.
 
-- Edit the biography and section copy in `index.html`.
-- Adjust colors and layout in `styles.css`.
-- Change the GitHub username in `script.js` and profile links in `index.html`.
-- Replace the two labeled design concepts with real case studies as desired.
+## Interactions and accessibility
 
-## GitHub Pages
+The carousel supports Previous / Next, selection dots, Arrow Left / Right, Home, and End. Links such as `projects.html#project-2` select the correct slide. There is no autoplay. All project articles remain readable without JavaScript.
 
-In repository Settings → Pages, select **Deploy from a branch**, then **main** and **/ (root)**. The static files work under a repository subpath.
+The mobile navigation supports Escape and closes after selecting a link. Shared motion includes a progress bar, shrinking blur header, expo-curve reveals, staggered hero text, bounded portrait parallax, image zoom, counters, and skill fills. Motion respects the system preference, including changes during a visit. Focus rings, skip links, image descriptions, live status messages, and field-specific form errors are included.
 
-## Content
+The contact form opens a `mailto:` draft after validation. The visitor must send the message in their email app. There is no backend, automatic email delivery, or success claim. Form content is retained if an email app is unavailable.
 
-The design concept cards are illustrative work, not claims of completed client projects. Repository cards load actual public repositories from GitHub. No credentials, analytics, or form backend are included.
+## Deploy
+
+Push main to GitHub. In Settings → Pages, use Deploy from a branch, main, / (root). All local paths are relative and support GitHub Pages repository URLs. This existing deployment should update after each push.
+
+## Edit
+
+Content is in the five HTML files, styling in styles.css, shared interactions in script.js, and supplied images in assets/. Language bars are self-assessed confidence levels. This portfolio describes LubeLogger as a self-hosted deployment of an existing app, not an app Joseph authored.

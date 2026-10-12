@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Technical skills of Joseph Michael Shaker, languages, systems, tools, and practices." />
+  <title>Porfolio Website Codex | Skills | Joseph Michael Shaker</title>
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Joseph Shaker home"><img class="logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" /><span>Joseph S.</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="skills.html" class="nav-link active" aria-current="page">Skills</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-label container">04 / TOOLS OF THE TRADE</div>
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Languages</h3><p class="small-note">Self-assessed confidence, not a certification.</p>
+            <ul class="skill-list">
+              <li><span>HTML/CSS</span><div class="bar" role="img" aria-label="HTML CSS proficiency 90 percent"><i style="--w:90%"></i></div></li>
+              <li><span>JavaScript / Node.js</span><div class="bar" role="img" aria-label="JavaScript proficiency 80 percent"><i style="--w:80%"></i></div></li>
+              <li><span>C++</span><div class="bar" role="img" aria-label="C++ proficiency 75 percent"><i style="--w:75%"></i></div></li>
+              <li><span>Python</span><div class="bar" role="img" aria-label="Python proficiency 78 percent"><i style="--w:78%"></i></div></li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Systems &amp; Tools</h3>
+            <ul class="chips">
+              <li>Linux (Arch/CachyOS, Omarchy, Hyprland)</li>
+              <li>Docker / Compose</li>
+              <li>Git / GitHub</li>
+              <li>GitHub Pages</li>
+              <li>SolidWorks CAD</li>
+              <li>Jellyfin / Radarr / Prowlarr</li>
+              <li>Microsoft Office</li>
+              <li>OnlyOffice</li>
+              <li>Apple Workspace (Pages, Numbers, Keynote)</li>
+              <li>Video Editing</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Practices</h3>
+            <ul class="checklist">
+              <li>Responsive design + media queries</li>
+              <li>Semantic HTML &amp; accessibility</li>
+              <li>Form validation &amp; UX feedback</li>
+              <li>Homelab troubleshooting (permissions, APIs)</li>
+              <li>Video editing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="roadmap-heading">
+      <div class="container">
+        <h2 id="roadmap-heading">Learning roadmap</h2>
+        <div class="steps">
+          <div class="step">
+            <h3>Now</h3>
+            <p>Fall 2026 coursework, responsive design depth, and shipping this portfolio to two hosts.</p>
+          </div>
+          <div class="step">
+            <h3>Next</h3>
+            <p>Cloud deployment on AWS and GitHub Actions automation for my homelab projects.</p>
+          </div>
+          <div class="step">
+            <h3>Later</h3>
+            <p>Data pipelines and databases to round out the data-engineering half of my degree.</p>
+          </div>
+          <div class="step">
+            <h3>Always</h3>
+            <p>Breaking and fixing things on Arch Linux, the distro that doubles as a teacher.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="exploring-heading">
+      <div class="container">
+        <h2 id="exploring-heading">Currently exploring</h2>
+        <p class="section-sub">What I'm learning next, driven by this portfolio's deployment journey.</p>
+        <ul class="chips">
+          <li>Cloud deployment (AWS)</li>
+          <li>GitHub Actions automation</li>
+          <li>Advanced CSS &amp; scroll motion</li>
+        </ul>
+        <div class="cta-banner">
+          <div>
+            <h3>No resume attached here</h3>
+            <p>Email me and I'll send one over with coursework and references.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Contact me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><img class="footer-logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" /><span>© <span id="year"></span> Joseph Michael Shaker. Porfolio Website Codex · Aberdeen, NJ</span></p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

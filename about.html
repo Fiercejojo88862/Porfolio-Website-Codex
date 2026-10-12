@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="About Joseph Michael Shaker, background, education, and interests." />
+  <title>Porfolio Website Codex | About Me | Joseph Michael Shaker</title>
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Joseph Shaker home"><img class="logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" /><span>Joseph S.</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="skills.html" class="nav-link">Skills</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-label container">02 / THE PERSON BEHIND THE PROJECTS</div>
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About Me</h2>
+        <div class="two-col">
+          <div>
+            <p>I'm Joseph, 20, a Software and Data Engineering Technology undergraduate commuting to university in Newark, NJ. I work across software and systems: web front-ends, Python tooling, C++, and a Docker homelab.</p>
+            <p><strong>Education:</strong> B.S. Software and Data Engineering Technology (major approved June 2026). Fall 2026 courses set with advisor Ms. Reyes.</p>
+            <p><strong>Interests:</strong> Linux desktop customization (Omarchy/Hyprland), self-hosted media (Jellyfin stack), CAD in SolidWorks, car enthusiast (Mercedes GL450), and gym training at Crunch Fitness Aberdeen.</p>
+            <div class="timeline">
+              <div class="timeline-item"><span>2026</span>Built omarchy-lock-studio (Python web customizer for lock screen)</div>
+              <div class="timeline-item"><span>2024</span>Deployed Docker media stack: Jellyfin, Radarr, qBittorrent, Prowlarr</div>
+              <div class="timeline-item"><span>2023</span>Built Squarespace fleet-booking widget (HTML/CSS)</div>
+            </div>
+          </div>
+          <aside class="info-card" aria-label="Quick facts">
+            <h3>Quick facts</h3>
+            <ul>
+              <li><strong>Laptop:</strong> ASUS Vivobook S16, 32GB / 1TB</li>
+              <li><strong>OS:</strong> Windows 11 + Arch/CachyOS (Omarchy)</li>
+              <li><strong>Phone:</strong> iPhone 13 Pro</li>
+            </ul>
+            <a class="btn btn-primary" href="contact.html">Get in touch</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt story" aria-labelledby="story-heading">
+      <div class="container">
+        <h2 id="story-heading">My story</h2>
+        <p>I didn't start with a computer science classroom. I started with a love of cars. I'm an enthusiast first: I follow the engineering, keep my 2011 Mercedes GL450 meticulously maintained, and track everything in my self-hosted garage app. That obsession with how machines work carried straight into code and Linux systems.</p>
+        <p>When I got into self-hosting, there was no tutorial for my exact setup, so I learned Docker networking, permissions, and indexer APIs the hands-on way, one broken container at a time. That homelab is still running today, and it taught me more about real systems than any single class.</p>
+        <p>In 2026 I entered Software and Data Engineering Technology (major approved that June after an appeal) and started bending my Linux desktop itself into shape, building a Python web customizer for the Omarchy lock screen. This portfolio is the next step: hand-written HTML, CSS, and JavaScript, deployed to GitHub Pages and NJIT's student server.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="principles-heading">
+      <div class="container">
+        <h2 id="principles-heading">Principles I build by</h2>
+        <div class="card-grid">
+          <div class="mini-card">
+            <h3>🔍 Diagnose before fixing</h3>
+            <p>From a finicky SUV suspension to broken containers: research first, reproduce the issue, then change one thing at a time.</p>
+          </div>
+          <div class="mini-card">
+            <h3>🏠 Self-host first</h3>
+            <p>If a service can run on my own hardware, it should. Private, free, and fully under my control.</p>
+          </div>
+          <div class="mini-card">
+            <h3>📝 Leave notes behind</h3>
+            <p>Every project gets a README and a gotcha list, including the stale-server bug that once broke my lock screen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="kit-heading">
+      <div class="container">
+        <h2 id="kit-heading">Everyday kit</h2>
+        <p class="section-sub">The gear and systems I actually use daily.</p>
+        <div class="card-grid">
+          <div class="mini-card">
+            <h3>💻 Workstation</h3>
+            <p>ASUS Vivobook S16 (32GB / 1TB), dual-boot Windows 11 + Arch/CachyOS with Omarchy and Hyprland.</p>
+          </div>
+          <div class="mini-card">
+            <h3>📱 Mobile &amp; audio</h3>
+            <p>iPhone 13 Pro with Sony WF-C710N earbuds and an Apple Music student plan.</p>
+          </div>
+          <div class="mini-card">
+            <h3>🏠 Homelab</h3>
+            <p>Self-hosted Docker stack on Arch Linux: Jellyfin, Radarr, qBittorrent, Prowlarr, and LubeLogger.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="beyond-heading">
+      <div class="container">
+        <h2 id="beyond-heading">Beyond the screen</h2>
+        <div class="card-grid">
+          <div class="mini-card">
+            <h3>🔧 Car enthusiast</h3>
+            <p>2011 Mercedes GL450, daily-driven, meticulously maintained, and the reason I run a self-hosted garage tracker.</p>
+          </div>
+          <div class="mini-card">
+            <h3>📐 CAD</h3>
+            <p>SolidWorks modeling with attention to surface vs. solid bodies and tolerance refinement.</p>
+          </div>
+          <div class="mini-card">
+            <h3>🏋️ Training</h3>
+            <p>Gym at Crunch Fitness Aberdeen with my friend Jeremiah; also ride a NIU KQi2 Pro scooter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand"><img class="footer-logo" src="assets/logo.png" alt="Joseph S. logo" width="512" height="512" /><span>© <span id="year"></span> Joseph Michael Shaker. Porfolio Website Codex · Aberdeen, NJ</span></p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
