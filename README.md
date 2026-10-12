@@ -1,6 +1,6 @@
 # Porfolio Website Codex
 
-A five-page personal portfolio for Joseph Michael Shaker, based in Aberdeen, NJ. This repository is separate from Personal-Portfolio-Website and uses Joseph's supplied photos, screenshots, biography, and contact links.
+A five-page personal portfolio for Joseph Shaker, based in Aberdeen, NJ. This repository is separate from Personal-Portfolio-Website and uses Joseph's supplied photos, screenshots, biography, and contact links.
 
 ## Pages
 

@@ -1,7 +1,7 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Shaker;Joseph;Michael;;
-FN:Joseph Michael Shaker
+N:Shaker;Joseph;;;
+FN:Joseph Shaker
 TITLE:Software and Data Engineering Student
 EMAIL;TYPE=INTERNET:Josephshaker2020@aol.com
 ADR;TYPE=HOME:;;;Aberdeen;NJ;;United States
