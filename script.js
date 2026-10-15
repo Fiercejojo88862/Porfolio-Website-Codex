@@ -365,3 +365,35 @@ if (mouseSpotlight) {
   document.addEventListener('visibilitychange', () => { if (document.hidden) hideSpotlight(); });
   motionPreference.addEventListener('change', hideSpotlight);
 }
+
+// Number keys 1-5 switch pages. Ignored while typing, searching, or using modifiers.
+const numberedPages = ['index.html', 'about.html', 'projects.html', 'skills.html', 'contact.html'];
+document.addEventListener('keydown', event => {
+  if (event.ctrlKey || event.metaKey || event.altKey || event.defaultPrevented) return;
+  if (!['1', '2', '3', '4', '5'].includes(event.key)) return;
+  if (commandDialog && commandDialog.open) return;
+  const target = event.target;
+  if (target && target.closest && target.closest('input, textarea, select, [contenteditable="true"], [contenteditable=""]')) return;
+  const next = numberedPages[Number(event.key) - 1];
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  if (current === next) return;
+  window.location.href = next;
+});
+
+// Bottom-right popup advertising the number-key shortcuts. Dismiss persists.
+const shortcutHint = document.querySelector('#shortcut-hint');
+if (shortcutHint) {
+  const hintKey = 'shortcut-hint-dismissed';
+  let dismissed = false;
+  try { dismissed = localStorage.getItem(hintKey) === '1'; } catch { dismissed = false; }
+  if (!dismissed) {
+    setTimeout(() => shortcutHint.classList.add('show'), 1200);
+  } else {
+    shortcutHint.remove();
+  }
+  shortcutHint.querySelector('[data-close-hint]')?.addEventListener('click', () => {
+    shortcutHint.classList.remove('show');
+    try { localStorage.setItem(hintKey, '1'); } catch { /* private mode */ }
+    setTimeout(() => shortcutHint.remove(), 450);
+  });
+}
